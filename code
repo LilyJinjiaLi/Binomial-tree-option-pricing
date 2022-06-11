@@ -3,7 +3,6 @@ import math
 from scipy.optimize import fsolve
 import matplotlib.pyplot as plt
 
-# %%
 """ Equity Option Base Class """
 
 class EquityOption(object):
@@ -87,12 +86,10 @@ class EuropeanOption(BinomialOption):
         return self.discount_payoff(payoffs)
 
 eu_option = EuropeanOption(1.1, 3, 0.5)     
-tr=eu_option.set_price_tree()
-print(tr)
+#tr=eu_option.set_price_tree()
 #eu_option.calc_payoff(tr)
 #eu_option.price_option()
-
-# %%    
+  
 """ Question 2: Calibrate v to given option value V """
 
 def __calibrate_option__(v, K, N, V):
@@ -118,7 +115,7 @@ def __calc_v__(K, N, V):
     return v
 
 __calc_v__(1,3,0.34375)       
-# %%
+
 """ Question 3: Pricing American call option """
 class AmericanOption(BinomialOption):
     '''
@@ -140,14 +137,11 @@ class AmericanOption(BinomialOption):
     
     def discount_payoff(self, payoffs):
         for i in np.arange(self.N-1, -1, -1):
-#            print("i=", i)
             payoffs = (payoffs[:-1]+payoffs[1:])*self.p
-#            print("payoffs:", payoffs)
-        
+      
         if not self.is_Euro:
             payoffs = self.exercise_early(payoffs, i)
-#            print("payoffs for AM:", payoffs)
-        
+            
         option = payoffs[0]
         return option
             
@@ -158,7 +152,7 @@ class AmericanOption(BinomialOption):
 
 am_option = AmericanOption(1.1, 3, 0.5, is_Euro=False)     
 am_option.price_option()
-# %%
+
 """ Question 4: Calculate the expected value of max(Sj) """
 
 '''
@@ -168,7 +162,7 @@ E[max(Sj)]
 = P(S1>=S1,...SN)+P(S2>=S1,...SN)+...+P(SN>=S2,...SN) E[Sj] = 1 based on the below calculation
 = 1
     
-    Thus we only need to show E[Sj]=1 for all 1<=j<=N
+Thus we only need to show E[Sj]=1 for all 1<=j<=N
 '''
 def calc_exp_S(v, period, S0=1, p=0.5, Rf=0):
     '''
@@ -206,6 +200,3 @@ def plot_exp_max_Sj(K, N, v):
 
 #calc_exp_S(0.5, 2)
 plot_exp_max_Sj(1, 4, 0.9)
-
-# %%
-# 5)
