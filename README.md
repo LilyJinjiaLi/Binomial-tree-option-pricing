@@ -4,7 +4,7 @@ Validus quant research case study
 
 Consider a multiperiod binomial asset model for an asset S with N periods. Under this particular model, we have the following assumptions:
 • the initial price of the asset is 𝑆0=1;
-• under the risk-neutral measure, the asset price at period j is 𝑆𝑗=(1+𝑣)𝑆𝑗−1 with probability ½, and 𝑆𝑗=(1−𝑣)𝑆𝑆𝑗−1 with probability ½, with 0<𝑣<1; and
+• under the risk-neutral measure, the asset price at period j is 𝑆𝑗=(1+𝑣)𝑆𝑗−1 with probability ½, and 𝑆𝑗=(1−𝑣)𝑆𝑗−1 with probability ½, with 0<𝑣<1; and
 • the interest rate associated with borrowing/lending currency for a single time period is 0.
 
 We are asked to do the following:
