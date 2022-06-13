@@ -1,5 +1,5 @@
 # Binomial-tree-option-pricing
-Validus quant research case study
+Quant research case study
 
 
 Consider a multiperiod binomial asset model for an asset S with N periods. Under this particular model, we have the following assumptions:
